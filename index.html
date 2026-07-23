@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pomodoro Focus Timer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="secret-puzzle" aria-label="Hidden puzzle">
+      <button class="secret-piece top-left" data-piece="1" type="button" aria-label="Secret puzzle piece 1">◌</button>
+      <button class="secret-piece top-right" data-piece="2" type="button" aria-label="Secret puzzle piece 2">◌</button>
+      <button class="secret-piece bottom-right" data-piece="3" type="button" aria-label="Secret puzzle piece 3">◌</button>
+      <button class="secret-piece bottom-left" data-piece="4" type="button" aria-label="Secret puzzle piece 4">◌</button>
+      <button class="secret-piece center-left" data-piece="5" type="button" aria-label="Secret puzzle piece 5">◌</button>
+      <button class="secret-piece center-right" data-piece="6" type="button" aria-label="Secret puzzle piece 6">◌</button>
+      <div id="secret-message" class="secret-message" aria-live="polite">Find the hidden pieces.</div>
+      <button id="secret-reveal" class="secret-reveal" type="button" aria-label="Hidden star puzzle">✦</button>
+    </div>
+
+    <button id="click-counter-btn" type="button" aria-label="Click counter">
+      <span>👍</span>
+      <span id="click-counter">0</span>
+    </button>
+
+    <main class="app-shell">
+      <section class="timer-card" aria-label="Pomodoro focus timer">
+        <div class="mode-selector" role="group" aria-label="Timer mode">
+          <button type="button" class="mode-btn active">Work (3m)</button>
+          <button type="button" class="mode-btn">Break (1m)</button>
+        </div>
+
+        <div class="timer-visual">
+          <div class="progress-ring" aria-hidden="true">
+            <svg viewBox="0 0 120 120">
+              <circle class="ring-bg" cx="60" cy="60" r="54"></circle>
+              <circle id="ring-progress" class="ring-progress" cx="60" cy="60" r="54"></circle>
+            </svg>
+          </div>
+          <h1 id="timer-display">25:00</h1>
+        </div>
+
+        <div class="controls" role="group" aria-label="Timer controls">
+          <button id="start-btn" type="button">Start</button>
+          <button id="pause-btn" type="button">Pause</button>
+          <button id="reset-btn" type="button">Reset</button>
+        </div>
+
+        <section class="sound-section" aria-labelledby="ambient-sounds-title">
+          <h2 id="ambient-sounds-title">Ambient Sounds</h2>
+          <div class="sound-controls" role="group" aria-label="Ambient sounds">
+            <button type="button" class="sound-btn" data-sound="rain" aria-pressed="false">🌧️ Rain</button>
+            <button type="button" class="sound-btn" data-sound="fireplace" aria-pressed="false">🔥 Fireplace</button>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
